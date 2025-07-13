@@ -81,6 +81,8 @@ This lab focused on implementing centralized security logging, threat detection,
 
 ## Screenshots
 
+*All relevant screenshots demonstrating each step are included in the screenshots/ folder of this repository.
+
 | Order | File Name                                 | What it Shows                                      |
 |-------|-------------------------------------------|----------------------------------------------------|
 | 1     | awsconfig_rules_compliance_status.png     | AWS Config dashboard showing compliance status     |
