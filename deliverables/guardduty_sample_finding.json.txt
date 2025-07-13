@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "2.0",
+  "accountId": "123456789012",
+  "region": "us-east-1",
+  "id": "12abc345d6789012efg34567hij890klmn012opqrs345tuvwx",
+  "type": "Recon:EC2/PortProbeUnprotectedPort",
+  "resource": {
+    "instanceDetails": {
+      "instanceId": "i-0abcd1234efgh5678",
+      "instanceType": "t2.micro",
+      "launchTime": "2024-07-12T00:00:00Z",
+      "networkInterfaces": [
+        {
+          "ipv4Addresses": ["192.0.2.1"]
+        }
+      ]
+    }
+  },
+  "service": {
+    "serviceName": "guardduty",
+    "eventFirstSeen": "2024-07-12T12:00:00Z",
+    "eventLastSeen": "2024-07-12T12:01:00Z",
+    "count": 1,
+    "detectorId": "ab123cd456efg789hi012jkl",
+    "action": {
+      "actionType": "PORT_PROBE",
+      "portProbeAction": {
+        "portProbeDetails": [
+          {
+            "localPortDetails": {
+              "port": 22,
+              "portName": "SSH"
+            },
+            "remoteIpDetails": {
+              "ipAddressV4": "203.0.113.42",
+              "country": {"countryName": "Exampleland"}
+            }
+          }
+        ]
+      }
+    }
+  },
+  "severity": 8,
+  "title": "Unprotected port on EC2 instance probed"
+}

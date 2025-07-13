@@ -1,0 +1,16 @@
+{
+  "ruleName": "iam-password-policy",
+  "resourceType": "AWS::Account",
+  "resourceId": "788670788114",
+  "complianceType": "NON_COMPLIANT",
+  "parameters": {
+    "RequireUppercaseCharacters": "-",
+    "RequireLowercaseCharacters": "-",
+    "RequireSymbols": "-",
+    "RequireNumbers": "-",
+    "MinimumPasswordLength": "-",
+    "PasswordReusePrevention": "-",
+    "MaxPasswordAge": "-"
+  },
+  "annotation": "Password policy does not require uppercase letters, lowercase letters, symbols, or numbers."
+}
