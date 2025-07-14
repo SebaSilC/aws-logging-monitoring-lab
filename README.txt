@@ -4,7 +4,7 @@ Implemented proactive threat detection and compliance monitoring across AWS serv
 
 ---
 
-##Table of Contents
+## Table of Contents
 
 - [Overview]
 - [Objectives]
