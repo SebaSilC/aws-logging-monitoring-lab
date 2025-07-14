@@ -5,7 +5,7 @@
         "principalId": "AIDA3PIDRGIJLMAHKRPYE",
         "arn": "arn:aws:iam::788670788114:user/admin-user",
         "accountId": "788670788114",
-        "accessKeyId": "ASIA3PIDRGIJFIQUPEDG",
+        "accessKeyId": "key id",
         "userName": "admin-user",
         "sessionContext": {
             "attributes": {
