@@ -15,7 +15,7 @@ Implemented proactive threat detection and compliance monitoring across AWS serv
   - [4. CloudWatch Metric Filter & Alarm]
   - [5. Athena Log Query Setup]
 - [Screenshots]
-- [Sample JSON Extracts and Usage]
+- [JSONs Table]
 - [Lessons Learned]
 - [References]
 
@@ -114,74 +114,15 @@ Sample snippet of raw CloudTrail event JSON, showing typical logged API activity
 
 ---
 
-## Sample JSON Extracts and Usage
+## JSONs Table
+
+*JSON files are included in the /sample_jsons/ folder for reference in this repository.
 
 | Order | File Name                               | What it Shows                                |
 |-------|-----------------------------------------|----------------------------------------------|
 | 1     | awsconfig_rule_noncompliant_sample.json | AWS Config non-compliance finding JSON       |
 | 2     | cloudtrail_event_sample.json            | Sample CloudTrail event JSON                 |
 | 3     | guardduty_sample_finding.json           | Sample GuardDuty finding JSON                |
-
-
-1. AWS Config Noncompliance Sample (awsconfig_rule_noncompliant_sample.json)
-
-{
-  "resourceType": "AWS::Account",
-  "resourceId": "788670788114",
-  "complianceType": "NON_COMPLIANT",
-  "annotation": "Password policy does not require uppercase letters, lowercase letters, symbols, or numbers."
-}
-
-This extract shows an AWS Config finding where the IAM password policy is missing required complexity elements, marking the account as non-compliant.
-
--
-
-2. CloudTrail Event Sample (cloudtrail_event_sample.json)
-
-{
-  "eventName": "ConsoleLogin",
-  "eventTime": "2025-07-12T13:59:53Z",
-  "userIdentity": {
-    "type": "IAMUser",
-    "userName": "admin-user"
-  },
-  "sourceIPAddress": "95.90.235.224"
-}
-
-Example of a CloudTrail event capturing a user login to the AWS console, showing who logged in and from which IP address.
-
--
-
-3. GuardDuty Sample Finding (guardduty_sample_finding.json)
-
-{
-  "type": "Recon:EC2/PortProbeUnprotectedPort",
-  "severity": 8,
-  "title": "Unprotected port on EC2 instance probed",
-  "resource": {
-    "instanceDetails": {
-      "instanceId": "i-0abcd1234efgh5678",
-      "instanceType": "t2.micro"
-    }
-  }
-}
-
-Sample GuardDuty finding indicating a reconnaissance port probe on an EC2 instance, highlighting a potential security risk.
-
--
-
-Bonus - Parsing Sample (Python)
-
-import json
-
-with open('cloudtrail_event_sample.json') as f:
-    event = json.load(f)
-
-print("Event Name:", event.get('eventName'))
-print("User:", event.get('userIdentity', {}).get('userName'))
-print("Source IP:", event.get('sourceIPAddress'))
-
-This simple Python snippet demonstrates how to parse a CloudTrail event JSON file to extract key information.
 
 ---
 
