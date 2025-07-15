@@ -25,7 +25,11 @@ Implemented proactive threat detection and compliance monitoring across AWS serv
 
 This lab focused on implementing centralized security logging, threat detection, and configuration compliance monitoring in AWS. Using CloudTrail for API auditing, GuardDuty for threat detection, AWS Config for resource compliance, CloudWatch for alerting, and Athena for querying logs, the lab demonstrates an end-to-end logging and monitoring pipeline essential for security operations.
 
-*A diagram of the overall process is available in the repository folder.
+---
+
+## Diagram
+
+![AWS Security Lab Architecture](diagram.png)
 
 ---
 
@@ -94,23 +98,17 @@ This lab focused on implementing centralized security logging, threat detection,
 
 ## Screenshot Explanations
 
-1. awsconfig_rules_compliance_status.png
-Displays the AWS Config dashboard with the compliance status of security rules, showing which rules are compliant or non-compliant.
+1. awsconfig_rules_compliance_status.png: Displays the AWS Config dashboard with the compliance status of security rules, showing which rules are compliant or non-compliant.
 
-2. cloudtrail_trail_summary.png
-Multi-region CloudTrail trail summary page confirming that logging is enabled across all regions and logs are being sent to the configured S3 bucket.
+2. cloudtrail_trail_summary.png: Multi-region CloudTrail trail summary page confirming that logging is enabled across all regions and logs are being sent to the configured S3 bucket.
 
-3. cloudwatch_alarm_consolelogin_summary.png
-Summary of the CloudWatch alarm configured to monitor ConsoleLogin events, indicating the alarm status and configuration.
+3. cloudwatch_alarm_consolelogin_summary.png: Summary of the CloudWatch alarm configured to monitor ConsoleLogin events, indicating the alarm status and configuration.
 
-4. cloudwatch_metric_filter_consolelogin.png
-CloudWatch metric filter setup targeting ConsoleLogin events from CloudTrail logs for real-time monitoring.
+4. cloudwatch_metric_filter_consolelogin.png: CloudWatch metric filter setup targeting ConsoleLogin events from CloudTrail logs for real-time monitoring.
 
-5. guardduty_enabled_dashboard.png
-GuardDuty dashboard confirming that threat detection is enabled and actively monitoring the AWS environment.
+5. guardduty_enabled_dashboard.png: GuardDuty dashboard confirming that threat detection is enabled and actively monitoring the AWS environment.
 
-6. sample-cloudtrail-log-json.png
-Sample snippet of raw CloudTrail event JSON, showing typical logged API activity details such as event name, time, user identity, and source IP address.
+6. sample-cloudtrail-log-json.png: Sample snippet of raw CloudTrail event JSON, showing typical logged API activity details such as event name, time, user identity, and source IP address.
 
 ---
 
