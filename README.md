@@ -7,6 +7,7 @@ Implemented proactive threat detection and compliance monitoring across AWS serv
 ## Table of Contents
 
 - [Overview]
+- [Diagram]
 - [Objectives]
 - [Steps Performed]
   - [1. CloudTrail Setup]
