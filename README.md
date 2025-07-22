@@ -14,9 +14,9 @@ Implemented proactive threat detection and compliance monitoring across AWS serv
 - [Steps Performed]
   - [1. CloudTrail Setup]
   - [2. GuardDuty Enablement]
-  - [3. AWS Config Setup and Rules]
+  - [3. AWS Config Setup]
   - [4. CloudWatch Metric Filter & Alarm]
-  - [5. Athena Log Query Setup]
+  - [5. Athena Query Setup]
   - [6. Cleanup]
 - [Screenshots]
 - [JSONs Table]
@@ -67,48 +67,37 @@ In modern cloud environments, the sheer volume of API activity and complex confi
 ## Steps Performed
 
 1. CloudTrail Setup
-   - Created a multi-region CloudTrail trail named main-trail.
-   - Configured logs to be delivered to a dedicated S3 bucket (my-cloudtrail-logs-sebastiansilva).
-   - Enabled optional CloudWatch Logs integration.
-   - Verified logging via CloudTrail console and S3 bucket contents.
-   - Collected sample JSON event logs for documentation.
+   - Created a multi-region CloudTrail trail named main-trail to capture all API activity.
+   - Configured the trail to deliver logs to a dedicated S3 bucket (my-cloudtrail-logs-sebastiansilva).
+   - Verified CloudTrail logging via console and confirmed logs in the S3 bucket (Screenshot: cloudtrail_trail_summary.png).
 
 2. GuardDuty Enablement
-   - Enabled GuardDuty in the main AWS region.
-   - Verified GuardDuty status via console screenshots.
-   - Noted that sample findings were not generated in the environment due to AWS timing but included a sample finding JSON in documentation.
+   - Enabled GuardDuty for threat detection in the main AWS region.
+   - Verified GuardDuty status in the console (Screenshot: guardduty_enabled_dashboard.png).
 
-3. AWS Config Setup and Rules
-   - Enabled AWS Config recording for all supported resource types.
-   - Created multiple AWS managed rules focusing on security best practices, including:
-      - restricted-ssh
-      - s3-bucket-public-read-prohibited
-      - s3-bucket-public-write-prohibited
-      - ec2-instance-no-public-ip
-      - iam-password-policy
-      - root-account-mfa-enabled
-      - cloudtrail-enabled
-      - guardduty-enabled-centralized
-   - Collected compliance dashboard and non-compliance example screenshots.
+3. AWS Config Setup
+   - Enabled AWS Config to record all supported resource types.
+   - Applied multiple AWS managed rules to enforce security compliance, including password policies and public access restrictions.
+   - Verified compliance dashboard status (Screenshot: awsconfig_rules_compliance_status.png).
 
 4. CloudWatch Metric Filter & Alarm
-   - Created a metric filter on CloudTrail logs for detecting ConsoleLogin events.
-   - Created a CloudWatch alarm triggered when login events occur.
-   - Captured metric filter and alarm summary screenshots.
+   - Created a CloudWatch metric filter to detect ConsoleLogin events from CloudTrail logs.
+   - Configured a CloudWatch alarm triggered on login activity for real-time alerting.
+   - Captured metric filter and alarm summaries (Screenshots: cloudwatch_metric_filter_consolelogin.png & cloudwatch_alarm_consolelogin_summary.png).
 
-5. Athena Log Query Setup
-   - Configured Athena query output location in S3.
-   - Created a database and table for querying CloudTrail logs stored in S3.
-   - Used Athena to run sample SQL queries to extract recent login events and API activity.
-   - Collected screenshots of table creation and query results.
+5. Athena Query Setup
+   - Configured Athena query output bucket in S3.
+   - Created Athena table from CloudTrail logs stored in S3.
+   - Executed SQL queries to analyze recent login events and API activities.
+   - Captured Athena query results (Screenshot: sample-cloudtrail-log-json.png).
 
 6. Cleanup
    - Deleted CloudTrail trails and emptied S3 buckets storing CloudTrail logs.
    - Disabled GuardDuty and removed associated data.
    - Deleted AWS Config rules, stopped and removed configuration recorder and delivery channels.
    - Removed CloudWatch log groups, metric filters and alarms created during the lab.
-   - Deleted Athena tables and emptied/deleted the S3 bucket used for Athena query results.
-   - Cleaned up IAM roles, policies and any other temporary resources created for lab purposes.
+   - Dropped Athena tables and emptied/deleted the S3 bucket used for Athena query results.
+   - Cleaned up IAM roles, policies, and any other temporary resources created for lab purposes.
    
 ---
 
