@@ -7,6 +7,8 @@ Implemented proactive threat detection and compliance monitoring across AWS serv
 ## Table of Contents
 
 - [Overview]
+- [Real-World Risk]
+- [What I Built]
 - [Diagram]
 - [Objectives]
 - [Steps Performed]
@@ -15,6 +17,7 @@ Implemented proactive threat detection and compliance monitoring across AWS serv
   - [3. AWS Config Setup and Rules]
   - [4. CloudWatch Metric Filter & Alarm]
   - [5. Athena Log Query Setup]
+  - [6. Cleanup]
 - [Screenshots]
 - [JSONs Table]
 - [Lessons Learned]
@@ -25,6 +28,23 @@ Implemented proactive threat detection and compliance monitoring across AWS serv
 ## Overview
 
 This lab focused on implementing centralized security logging, threat detection, and configuration compliance monitoring in AWS. Using CloudTrail for API auditing, GuardDuty for threat detection, AWS Config for resource compliance, CloudWatch for alerting, and Athena for querying logs, the lab demonstrates an end-to-end logging and monitoring pipeline essential for security operations.
+
+---
+
+## Real-World Risk
+
+In modern cloud environments, the sheer volume of API activity and complex configurations can obscure malicious behavior or compliance drift, increasing the risk of unnoticed breaches and misconfigurations. Without centralized logging, threat detection and continuous compliance monitoring, attackers can exploit gaps in visibility to move laterally, exfiltrate data or persist undetected. This lab addresses these risks by implementing a comprehensive logging and monitoring solution that enables proactive detection of suspicious activities and ensures that cloud resources remain securely configured.
+
+---
+
+## What I Built
+
+- Multi-region AWS CloudTrail trail to capture all API calls and user activity.
+- Enabled GuardDuty for continuous threat detection using machine learning and threat intelligence.
+- Configured AWS Config with multiple managed rules to monitor resource compliance against security best practices.
+- Created CloudWatch metric filters and alarms to detect and alert on critical events such as unauthorized console logins.
+- Set up Athena to query CloudTrail logs stored in S3 for detailed forensic analysis and incident investigation.
+- Secured log storage and alerting mechanisms to ensure integrity and timeliness of security data.
 
 ---
 
@@ -82,6 +102,14 @@ This lab focused on implementing centralized security logging, threat detection,
    - Used Athena to run sample SQL queries to extract recent login events and API activity.
    - Collected screenshots of table creation and query results.
 
+6. Cleanup
+   - Deleted CloudTrail trails and emptied S3 buckets storing CloudTrail logs.
+   - Disabled GuardDuty and removed associated data.
+   - Deleted AWS Config rules, stopped and removed configuration recorder and delivery channels.
+   - Removed CloudWatch log groups, metric filters and alarms created during the lab.
+   - Deleted Athena tables and emptied/deleted the S3 bucket used for Athena query results.
+   - Cleaned up IAM roles, policies and any other temporary resources created for lab purposes.
+   
 ---
 
 ## Screenshots
