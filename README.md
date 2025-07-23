@@ -140,20 +140,11 @@ In modern cloud environments, the sheer volume of API activity and complex confi
 
 ## References
 
-- AWS CloudTrail Documentation
-  (https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)
-
-- AWS GuardDuty Documentation
-  (https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)
-
-- AWS Config Documentation
-  (https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html)
-
-- AWS CloudWatch Documentation
-  (https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)
-
-- AWS Athena Documentation
-  (https://docs.aws.amazon.com/athena/latest/ug/what-is.html)
+- [AWS CloudTrail Documentation](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)
+- [AWS GuardDuty Documentation](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)
+- [AWS Config Documentation](https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html)
+- [AWS CloudWatch Documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)
+- [AWS Athena Documentation](https://docs.aws.amazon.com/athena/latest/ug/what-is.html)
 
 ---
 
