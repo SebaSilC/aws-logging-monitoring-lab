@@ -6,22 +6,22 @@ Implemented proactive threat detection and compliance monitoring across AWS serv
 
 ## Table of Contents
 
-- [Overview]
-- [Real-World Risk]
-- [What I Built]
-- [Diagram]
-- [Objectives]
-- [Steps Performed]
+- [Overview](#overview)
+- [Real-World Risk](#real-world-risk)
+- [What I Built](#what-i-built)
+- [Diagram](#diagram)
+- [Objectives](#objectives)
+- [Steps Performed](#steps-performed)
   - [1. CloudTrail Setup]
   - [2. GuardDuty Enablement]
   - [3. AWS Config Setup]
   - [4. CloudWatch Metric Filter & Alarm]
   - [5. Athena Query Setup]
   - [6. Cleanup]
-- [Screenshots]
-- [JSONs Table]
-- [Lessons Learned]
-- [References]
+- [Screenshots](#screenshots)
+- [JSONs Table](#jsons-table)
+- [Lessons Learned](#lessons-learned)
+- [References](#references)
 
 ---
 
