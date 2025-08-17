@@ -70,27 +70,27 @@ In modern cloud environments, the sheer volume of API activity and complex confi
 **1. CloudTrail Setup**
    - Created a multi-region CloudTrail trail named main-trail to capture all API activity.
    - Configured the trail to deliver logs to a dedicated S3 bucket (my-cloudtrail-logs-sebastiansilva)
-   - Verified CloudTrail logging via console and confirmed logs in the S3 bucket *(Screenshot: cloudtrail_trail_summary.png)*
+   - Verified CloudTrail logging via console and confirmed logs in the S3 bucket *(Screenshot: `cloudtrail_trail_summary.png`)*
 
 **2. GuardDuty Enablement**
    - Enabled GuardDuty for threat detection in the main AWS region.
-   - Verified GuardDuty status in the console *(Screenshot: guardduty_enabled_dashboard.png)*
+   - Verified GuardDuty status in the console *(Screenshot: `guardduty_enabled_dashboard.png`)*
 
 **3. AWS Config Setup**
    - Enabled AWS Config to record all supported resource types.
    - Applied multiple AWS managed rules to enforce security compliance, including password policies and public access restrictions.
-   - Verified compliance dashboard status *(Screenshot: awsconfig_rules_compliance_status.png)*
+   - Verified compliance dashboard status *(Screenshot: `awsconfig_rules_compliance_status.png`)*
 
 **4. CloudWatch Metric Filter & Alarm**
    - Created a CloudWatch metric filter to detect ConsoleLogin events from CloudTrail logs.
    - Configured a CloudWatch alarm triggered on login activity for real-time alerting.
-   - Captured metric filter and alarm summaries *(Screenshots: cloudwatch_metric_filter_consolelogin.png & cloudwatch_alarm_consolelogin_summary.png)*
+   - Captured metric filter and alarm summaries *(Screenshots: `cloudwatch_metric_filter_consolelogin.png` & `cloudwatch_alarm_consolelogin_summary.png`)*
 
 **5. Athena Query Setup**
    - Configured Athena query output bucket in S3.
    - Created Athena table from CloudTrail logs stored in S3.
    - Executed SQL queries to analyze recent login events and API activities.
-   - Captured Athena query results *(Screenshot: sample-cloudtrail-log-json.png)*
+   - Captured Athena query results *(Screenshot: `sample-cloudtrail-log-json.png`)*
 
 **6. Cleanup**
    - Deleted CloudTrail trails and emptied S3 buckets storing CloudTrail logs.
